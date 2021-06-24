@@ -2,36 +2,34 @@ package empwagebuilder;
 
 public class Empwagebuilder {
 
-	public static final int FULL_DAY = 8;
-	public static final int PART_TIME = 4;
-	public static final int WAGE_PER_HOUR =20;
-	public static final int IS_EMP_PRESENT = 1;
-    public static final  int IS_PART_TIME = 2;
-    public static void main(String args[]) { 
-            int dailywage=0;
-for (int i = 0; i<20; i++) {
+	public static void main(String[] args) {
+	int PartTimeHours = 4;
+	int FullDay = 8;
+	int WarkingHourDay = 100;
+	int WorkingDayParMonth = 20;
+	final int empPresent = 1;
+	final int empPartTime = 2;
+	int dailyWage = 0;
 
+	int empCheck = (int)Math.floor(Math.random() * 10) % 3;
+	
+	switch (empCheck) {
+	case empPresent:
+		dailyWage = FullDay*WarkingHourDay*WorkingDayParMonth;
+		System.out.println("Employee is Present");
+		System.out.println("Employee Daily 20 Day Wage Is : "+ dailyWage);
+		break;
+	case empPartTime:{
+		dailyWage = PartTimeHours*WarkingHourDay*WorkingDayParMonth;
+		System.out.println("Employee Part Time is Present");
+		System.out.println("Employee Part Time 20 Day Wage Is : "+ dailyWage);
+		break;
+	}
+	default:
+		System.out.println("Employee is Absent");
+		break;
+	}
 }
-			double empCheck = Math.floor(Math.random() *10) % 3;
-			
-			
-			switch ((int)empCheck) {
-			
-			case IS_EMP_PRESENT:
-				dailywage = FULL_DAY *WAGE_PER_HOUR;
-				System.out.println("Empoyee is Present");
-				System.out.println("Daily Employee Wage is : "+ dailywage);
-				break;
-				
-			case  IS_PART_TIME:{
-				dailywage = PART_TIME *WAGE_PER_HOUR;
-				System.out.println("Employee is Present for part time");
-				System.out.println("Daily Employee Wageis : "+ dailywage);
-			}
-			default:
-				System.out.println("Employee is Absent");
-			}
-  } 
 
 
 }
